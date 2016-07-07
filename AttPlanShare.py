@@ -20,7 +20,7 @@ for i in range(len(Account_List)):	# Enter the share info for each number
 PaymentList = range(len(Account_List))
 ExtraDataShare = range(len(Account_List))
 for j in range(len(Account_List)):
-	if DataShare[j] > 0.25:
+	if DataShare[j] > (1/len(Account_List)):
 		ExtraDataShare[j] = DataShare[j]
 	else:
 		ExtraDataShare[j] = 0
