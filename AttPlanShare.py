@@ -3,7 +3,7 @@ import math
 ############### Account Info Summary #####################
 Account_List = ['0915' , '0896' , '7001' , '5076']	# Account members' numbers
 BasicData = 10
-BasicDataFee = 80
+BasicDataFee = 105
 ExtraDataFee = input("What's the extra data usage fee(unit: $)?")
 DataShare = range(len(Account_List))
 BasicFee = range(len(Account_List))
