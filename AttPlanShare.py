@@ -1,9 +1,9 @@
 import math
 
 ############### Account Info Summary #####################
-Account_List = ['0915' , '0896' , '7001' , '5076']	# Account members' numbers
-BasicData = 10
-BasicDataFee = 105
+Account_List = ['0915' , '0896' , '7001' , '5076' , '9587' , '0562' , '9967' , '0584']	# Account members' numbers
+BasicData = 15
+BasicDataFee = 90
 ExtraDataFee = input("What's the extra data usage fee(unit: $)?")
 DataShare = range(len(Account_List))
 BasicFee = range(len(Account_List))
@@ -27,9 +27,12 @@ for j in range(len(Account_List)):
 ExtraDataShareSum = 0
 for j in range(len(Account_List)):
 	ExtraDataShareSum = ExtraDataShareSum + ExtraDataShare[j]
-for j in range(len(Account_List)):
-	PaymentList[j] = BasicFee[j] + (BasicDataFee / len(Account_List)) + (int(ExtraDataFee) * (ExtraDataShare[j] / ExtraDataShareSum))
-
+if ExtraDataShareSum != 0:
+	for j in range(len(Account_List)):
+		PaymentList[j] = BasicFee[j] + (BasicDataFee / len(Account_List)) + (int(ExtraDataFee) * (ExtraDataShare[j] / ExtraDataShareSum))
+else:
+	for j in range(len(Account_List)):
+		PaymentList[j] = BasicFee[j] + (BasicDataFee / len(Account_List))
 ############### Print Payment #####################
 print("---------------------------------------------")
 print("Print Payment")
